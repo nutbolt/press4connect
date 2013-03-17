@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>P4C Setup</title>
+</head>
+<body>
+<form action="/cgi-bin/p4c.lua" method="get">
+<input type="hidden" name="p4c" value="wireless2wired">
+SSID: <input type="text" name="ssid"><br>
+encryption: <select name="encryption">
+<option value="none">None</option>
+<option value="psk2">PSK2</option>
+<option value="wpa">WPA</option>
+<option value="wep">WEP</option>
+</select><br>
+key: <input type="password" name="key"><br>
+<input type="submit">
+</form>
+</body>
+</html>
+

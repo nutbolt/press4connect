@@ -1,0 +1,19 @@
+#!/bin/sh
+
+logger P4C $BUTTON $ACTION
+
+LOCKFILE="/tmp/p4c-reset.lock"
+TARGETSCRIPT="/root/p4c/p4config.sh"
+TIMEOUT=3
+
+case "$ACTION"
+in
+ pressed)
+	( sleep $TIMEOUT && exec "$TARGETSCRIPT" "p4config" ) &
+	echo $! > "$LOCKFILE"
+   ;;
+ released)
+ 	kill -9 $(cat "$LOCKFILE") 
+   ;;
+esac
+
