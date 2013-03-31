@@ -7,8 +7,13 @@ path="$dir/$config"
 
 logger "[P4C] Setting up config: $config"
 
+for x in "$@"
+do
+	export "$x"
+done
+
 cd "$path"
-"$path/init.sh"
+"$path/init.sh" 
 
 logger "[P4C] Finished"
 

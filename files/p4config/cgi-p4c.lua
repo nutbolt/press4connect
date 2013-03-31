@@ -26,9 +26,17 @@ print( "Content-Type: text/plain\n" )
 query = os.getenv( "QUERY_STRING" )
 params = querystring(query)
 
+args = ""
+for k,v in pairs(params)
+do
+  if not (k == "p4c") then
+    args = args .. " " .. k .. "='" .. v .. "'"
+  end
+end
+
 print( "done" )
 
 os.execute( "/root/p4c/p4config/deinit.sh" )
-os.execute( "/root/p4c/p4config.sh " .. params["p4c"] .. " " .. params["ssid"] .. " " .. params["encryption"] .. " " .. params["key"] )
+os.execute( "/root/p4c/p4config.sh " .. params["p4c"] .. " " .. args )
 
 

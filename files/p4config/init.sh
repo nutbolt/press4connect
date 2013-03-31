@@ -13,5 +13,5 @@ ln -sf $(pwd)/cgi-p4c.lua /www/cgi-bin/p4c.lua
 
 /etc/init.d/network restart
 /etc/init.d/dnsmasq restart
-/etc/init.d/uhttp start
+/etc/init.d/uhttpd start
 

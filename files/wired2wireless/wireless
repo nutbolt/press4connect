@@ -11,7 +11,7 @@ config wifi-device  wlan0
 
 config wifi-iface
 	option device   wlan0
-	option network  wan
-	option mode     sta
+	option network  lan
+	option mode     ap
 	option ssid     "ssid here"
 	option encryption none
