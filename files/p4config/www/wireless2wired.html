@@ -1,48 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head>
-<link rel="stylesheet" type="text/css" href="style.css">
-<title>P4C Setup</title>
-</head>
-<body>
+  <head>
+  	<meta charset="UTF-8">
+  	<title>Wi-Fi to wired</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
 
-<div id="stylized" class="myform">
-<div class="head"><img src="wireless2wired.png"></div>
-<form id="form" name="form" method="get" action="/cgi-bin/p4c.lua">
-<input type="hidden" name="p4c" id="p4c" value="wireless2wired" />
-<h1>Wireless to Wired</h1>
-<p>this configuration will share an internet connection from wireless to a computer connected via cable.</p>
-
-<label>SSID
-<span class="small">The SSID of the network</span>
-</label>
-<input type="text" name="ssid" id="ssid" />
-
-<label>Password
-<span class="small">The network's password</span>
-</label>
-<input type="text" name="key" id="key" />
-
-<label>Encryption
-<span class="small">Network Encryption</span>
-</label>
-<select name="encryption" id="encryption">
-<option value="none">None</option>
-<option value="psk2">PSK2</option>
-<option value="wpa">WPA</option>
-<option value="wep">WEP</option>
-</select>
-
-<button type="submit">Setup Config</button>
-<div class="spacer"></div>
-
-</form>
-</div>
-
-<script>
-document.getElementById("ssid").focus();
-</script>
-
-</body>
+  <body>
+  	<div role="main">
+  	  <img src="arrow_left.png"><a href="index.html">Back to configuration selection</a>
+      <img src="wireless2wired.png" class="configicon">
+	  <form id="form" method="get" action="/cgi-bin/p4c.lua">
+	  <input type="hidden" name="p4c" id="p4c" value="wireless2wired">
+        <h1>Wireless to Wired</h1>
+	    <p>this configuration will share an internet connection from wireless to a computer connected via cable.</p>
+        
+        <label for="ssid">SSID
+        <small>The name of the network you want to connect to</small>
+        </label>
+        <input type="text" name="ssid" id="ssid" autofocus>
+        
+        <label for="key">Password
+        <small>The password used to connect to this Wi-Fi hotspot</small>
+        </label>
+        <input type="text" name="key" id="key" />
+        
+        <label for="encryption">Security
+        <small>Network Encryption</small>
+        </label>
+        <select name="encryption" id="encryption">
+          <option value="none">None</option>
+          <option value="psk2">PSK2</option>
+          <option value="wpa">WPA</option>
+          <option value="wep">WEP</option>
+        </select>
+        
+        <button type="submit">Setup Config</button>
+      </form>
+    </div>
+  </body>
 </html>
-
